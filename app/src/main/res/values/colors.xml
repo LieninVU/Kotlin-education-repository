@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <!-- Основные цвета -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#03DAC6</color>
+    <color name="colorOnSecondary">#000000</color>
+
+    <!-- Цвета для карточек -->
+    <color name="cardCold">#BBDEFB</color> <!-- Синий для холода -->
+    <color name="cardMild">#C8E6C9</color> <!-- Зелёный для умеренной температуры -->
+    <color name="cardWarm">#FFF3E0</color> <!-- Оранжевый для тепла -->
+    <color name="cardHot">#FFCDD2</color> <!-- Красный для жары -->
+    <color name="cardRain">#B3E5FC</color> <!-- Голубой для дождя -->
+    <color name="cardSnow">#F5F5F5</color> <!-- Серый для снега -->
+</resources>

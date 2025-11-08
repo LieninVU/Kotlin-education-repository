@@ -1,0 +1,12 @@
+<resources>
+<!--    <string name="app_name">HomeWork</string>-->
+    <string name="app_name" translatable="false">WeatherApp</string>
+    <string name="weather_screen_title" translatable="false">Погода</string>
+    <string name="weather_item_date" translatable="false">Дата: %1$s</string>
+    <string name="weather_item_temp" translatable="false">Температура: %1$.1f°C</string>
+    <string name="weather_item_description" translatable="false">Описание: %1$s</string>
+    <string name="weather_item_rain" translatable="false">Осадки: %1$s</string>
+    <string name="no_rain" translatable="false">Нет</string>
+    <string name="error_loading_weather" translatable="false">Ошибка загрузки погоды</string>
+    <string name="retry" translatable="false">Повторить</string>
+</resources>
