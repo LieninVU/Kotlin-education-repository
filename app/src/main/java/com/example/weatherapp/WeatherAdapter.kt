@@ -44,11 +44,11 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() 
             dateTextView.text = context.getString(R.string.weather_item_date, item.date)
             tempTextView.text = context.getString(R.string.weather_item_temp, item.maxTemp)
 
-            // Описание погоды на основе кода (упрощённо)
+
             val description = getWeatherDescription(item.weatherCode)
             descriptionTextView.text = context.getString(R.string.weather_item_description, description)
 
-            // Описание осадков
+
             val rainText = if (item.rainProbability != null && item.rainProbability > 0) {
                 context.getString(R.string.weather_item_rain, "${item.rainProbability}%")
             } else {
@@ -56,17 +56,17 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() 
             }
             rainTextView.text = rainText
 
-            // Выбор цвета фона карточки
+
             val cardColorRes = getCardColorForWeather(item.maxTemp, item.weatherCode)
             cardView.setCardBackgroundColor(ContextCompat.getColorStateList(context, cardColorRes))
 
-            // Выбор иконки (упрощённо, можно улучшить)
+
             val iconRes = getWeatherIcon(item.weatherCode)
             iconImageView.setImageResource(iconRes)
         }
 
         private fun getWeatherDescription(code: Int): String {
-            // Упрощённое сопоставление кодов (реальные коды см. в документации API)
+
             return when (code) {
                 0 -> "Ясно"
                 1, 2, 3 -> "Облачно"
@@ -82,12 +82,12 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() 
         }
 
         private fun getCardColorForWeather(temp: Double, code: Int): Int {
-            // Определение цвета в зависимости от температуры и осадков
+
             return if (code in listOf(51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86)) {
-                // Если есть код осадков
+
                 if (code in listOf(61, 63, 65, 66, 67, 71, 73, 75, 77, 85, 86)) R.color.cardSnow else R.color.cardRain
             } else {
-                // Иначе по температуре
+
                 when {
                     temp < 0 -> R.color.cardCold
                     temp < 15 -> R.color.cardMild
@@ -98,15 +98,15 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() 
         }
 
         private fun getWeatherIcon(code: Int): Int {
-            // Упрощённый выбор иконки
+
             return when (code) {
-                0 -> R.drawable.ic_clear // Предполагается наличие иконки
+                0 -> R.drawable.ic_clear
                 1, 2, 3 -> R.drawable.ic_cloud
                 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 85, 86 -> R.drawable.ic_rain
                 45, 48 -> R.drawable.ic_fog
                 71, 73, 75, 77 -> R.drawable.ic_snow
                 95, 96, 99 -> R.drawable.ic_storm
-                else -> R.drawable.ic_unknown // Заглушка
+                else -> R.drawable.ic_unknown
             }
         }
     }

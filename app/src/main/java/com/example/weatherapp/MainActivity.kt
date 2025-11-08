@@ -19,7 +19,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-// Убедитесь, что пакет соответствует вашему проекту
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,8 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var retryButton: Button
     private lateinit var toolbar: Toolbar
 
-    // executor больше не нужен
-    // private val executor = Executors.newSingleThreadExecutor()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -157,9 +155,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // executor.shutdown() больше не нужен
-    /*override fun onDestroy() {
-        super.onDestroy()
-        executor.shutdown()
-    }*/
+
 }

@@ -11,7 +11,7 @@ data class Daily(
     val precipitation_probability_max: List<Double>?
 )
 
-// Класс для представления данных одной карточки
+
 data class WeatherItem(
     val date: String,
     val maxTemp: Double,
